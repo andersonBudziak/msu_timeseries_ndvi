@@ -32,6 +32,8 @@ This class is responsible for visualizing the processed NDVI data and computed p
 
 Theoretical Background: Data visualization plays a crucial role in exploratory data analysis and communicating findings effectively. Visual representations of NDVI time series data and phenological metrics help researchers and decision-makers understand vegetation dynamics, identify anomalies, and assess the impact of environmental factors. Various types of plots, such as time series plots, scatter plots, and histograms, may be used to visualize different aspects of the data and derived metrics.
 
+![Exemplo image](image.png)
+
 ## Overview
 
 NDVI is calculated from satellite data, typically in remote sensing images, and provides a measure of the "greenness" or "density" of vegetation in a specific area. This project aims to:
