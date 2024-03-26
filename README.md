@@ -80,10 +80,6 @@ NDVI is a standardized index that allows you to generate an image showing the re
 
 This analysis is pivotal in understanding vegetation dynamics, aiding in ecological research, agricultural planning, and environmental monitoring.
 
-## Contributing
-
-We welcome contributions to this project. Please read `CONTRIBUTING.md` for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## License
 
 This project is licensed under the [GCERLab License](https://www.gcerlab.com/).
