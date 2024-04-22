@@ -94,6 +94,7 @@ This analysis is pivotal in understanding vegetation dynamics, aiding in ecologi
 - 8 - Vertical difference between eos_abs and pos
 - 9 - Horizontal difference between eos_abs and pos
 - 10 - Vertical difference between eos_abs and vos_end
+- 11 - Days over 85% percentiles NDVI between bos_abs and eos_abs
 
 
 

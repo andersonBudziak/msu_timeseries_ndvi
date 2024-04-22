@@ -26,7 +26,7 @@ class PhenologyMetrics:
         end_date = self.phenology_df.loc[self.phenology_df['Phenologic'] == 'eos_abs', 'Date'].values[0]
 
         # Filtrar as linhas entre as datas especificadas
-        mask = (self.ndvi_df['date'] >= pd.to_datetime(start_date)) & (self.ndvi_df['date'] <= pd.to_datetime(end_date))
+        mask = (self.ndvi_df['date'] >=  end_date) & (self.ndvi_df['date'] <= start_date)
         filtered_data = self.ndvi_df.loc[mask]
 
         # Calcular o valor do percentil na coluna NDVI
@@ -39,28 +39,34 @@ class PhenologyMetrics:
         # Assuming phenology_metrics is an instance of a class with these methods
         df_metrics = pd.DataFrame([
             {'Value': self.days_between('vos_start', 'vos_end'),
-            'Phenologic': 'Days between vos_end and vos_start'},
+            'Phenologic': 'Days between vos_end and vos_start'},#1
 
-            {'Value': self.days_between('bos_abs', 'eos_abs'),
-            'Phenologic': 'Days between bos_abs and eos_abs'},
+            {'Value': self.days_between(   'eos_abs', 'bos_abs'),
+            'Phenologic': 'Days between bos_abs and eos_abs'},#2
 
-            {'Value': self.vertical_difference('eos_abs', 'pos'),
-            'Phenologic': 'Vertical difference between eos_abs and pos'},
+            {'Value': self.vertical_difference('bos_abs', 'pos'),
+            'Phenologic': 'NDVI difference between bos_abs and pos'},#3
 
-            {'Value': self.horizontal_difference('pos', 'eos_abs'),
-            'Phenologic': 'Horizontal difference between pos and eos_abs'},
+            {'Value': self.horizontal_difference( 'pos', 'bos_abs'),
+            'Phenologic': 'Days difference between bos_abs and pos'},#4
 
-            {'Value': self.horizontal_difference('vos_start', 'eos_abs'),
-            'Phenologic': 'Horizontal difference between vos_start and eos_abs'},
-
-            {'Value': self.vertical_difference('vos_start', 'eos_abs'),
-            'Phenologic': 'Vertical difference between vos_start and eos_abs'},
-
-            {'Value': self.horizontal_difference('bos_abs', 'vos_end'),
-            'Phenologic': 'Horizontal difference between vos_end and bos_abs'},
+            {'Value': self.horizontal_difference('vos_start', 'bos_abs'),
+            'Phenologic': 'Days difference between vos_start and bos_abs'},#5
 
             {'Value': self.vertical_difference('vos_start', 'bos_abs'),
-            'Phenologic': 'Vertical difference between vos_start and bos_abs'},
+            'Phenologic': 'NDVI difference between vos_start and bos_abs'},#6
+
+            {'Value': self.horizontal_difference('eos_abs', 'vos_end'),
+            'Phenologic': 'Days difference between vos_end and eos_abs'},#7
+
+            {'Value': self.vertical_difference(  'eos_abs', 'pos'),
+            'Phenologic': 'NDVI difference between eos_abs and pos'},#8
+
+            {'Value': self.horizontal_difference( 'eos_abs', 'pos'),
+            'Phenologic': 'Days difference between eos_abs and pos'},#9
+
+            {'Value': self.vertical_difference('vos_end', 'eos_abs'),
+            'Phenologic': 'NDVI difference between eos_abs and vos_end'},#10
 
             {'Value': self.percentil_difference(),
             'Phenologic': 'Count 85% percentiles days between bos_abs and eos_abs'}

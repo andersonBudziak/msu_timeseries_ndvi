@@ -62,7 +62,7 @@ class PhenologyPlotter:
 
         df = self.ndvi_df.dropna(subset=["id"])
 
-        fig.add_trace(go.Scatter(x=list(df['date']), y=list(df['ndvi']), mode='markers', name='NDVIs HLS', marker=dict(color='#642834', size=5)), row=1, col=1)
+        fig.add_trace(go.Scatter(x=list(df['date']), y=list(df['ndvi']), mode='markers', name='HLS Images', marker=dict(color='#642834', size=5)), row=1, col=1)
 
         fig.update_layout(
             height=800,
