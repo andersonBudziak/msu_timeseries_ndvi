@@ -82,6 +82,25 @@ This analysis is pivotal in understanding vegetation dynamics, aiding in ecologi
 
 ![metrics](image.png)
 
+
+### Understanding NDVI Geometrics Metrics
+- 1 - Days between vos_start and vos_end
+- 2 - Days between bos_abs and eos_abs
+- 3 - Vertical difference between bos_abs and pos
+- 4 - Horizontal difference between bos_abs and pos
+- 5 - Horizontal difference between vos_start and bos_abs
+- 6 - Vertical difference between vos_start and bos_abs
+- 7 - Horizontal difference between vos_end and eos_abs
+- 8 - Vertical difference between eos_abs and pos
+- 9 - Horizontal difference between eos_abs and pos
+- 10 - Vertical difference between eos_abs and vos_end
+
+
+
+
+![geometrics_metrics](plot_metrics.png)
+
+
 ## License
 
 This project is licensed under the [GCERLab License](https://www.gcerlab.com/).
